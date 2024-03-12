@@ -1,0 +1,8 @@
+SUBDIRS := src plugins tst
+
+$(TOPTARGETS): $(SUBDIRS)
+
+$(SUBDIRS):
+	@$(MAKE) -C $@ $(MAKECMDGOALS)
+
+.PHONY: $(TOPTARGETS) $(SUBDIRS)

@@ -1,0 +1,15 @@
+diff --git a/src/commands.c b/src/commands.c
+index 73d4d4e8d6ec..f57db6d07615 100644
+--- a/src/commands.c
++++ b/src/commands.c
+@@ -9,6 +9,10 @@
+ #include <thermal.h>
+ #include "thermal_nl.h"
+ 
++#ifndef ARRAY_SIZE
++#define ARRAY_SIZE(__array) (sizeof(__array) / sizeof(__array[0]))
++#endif
++
+ static struct nla_policy thermal_genl_policy[THERMAL_GENL_ATTR_MAX + 1] = {
+ 	/* Thermal zone */
+ 	[THERMAL_GENL_ATTR_TZ]                  = { .type = NLA_NESTED },

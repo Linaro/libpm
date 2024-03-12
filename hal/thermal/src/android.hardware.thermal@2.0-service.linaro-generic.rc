@@ -1,0 +1,6 @@
+service hal_thermal /vendor/bin/hw/android.hardware.thermal@2.0-service.linaro-generic
+    interface android.hardware.thermal@1.0::IThermal generic
+    interface android.hardware.thermal@2.0::IThermal generic
+    class hal
+    user system
+    group system

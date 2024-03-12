@@ -1,0 +1,22 @@
+/* SPDX-License-Identifier: LGPL-2.1+ */
+/* Copyright (C) 2023, Linaro Ltd - Daniel Lezcano <daniel.lezcano@linaro.org> */
+#ifndef __LIBPERFORMANCE_H
+#define __LIBPERFORMANCE_H
+
+#ifndef LIBPERFORMANCE_API
+#define LIBPERFORMANCE_API __attribute__((visibility("default")))
+#endif
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+	struct power_handler;
+
+	struct power_handler *performance_create(void);
+
+	void performance_destroy(struct power_handler *handler);
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* __LIBPERFORMANCE_H */
