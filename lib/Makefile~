@@ -1,8 +1,0 @@
-SUBDIRS := performance thermal
-
-$(TOPTARGETS): $(SUBDIRS)
-
-$(SUBDIRS):
-	@$(MAKE) -C $@ $(MAKECMDGOALS)
-
-.PHONY: $(TOPTARGETS) $(SUBDIRS)
