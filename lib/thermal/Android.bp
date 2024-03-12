@@ -1,7 +1,7 @@
 // Copyright 2021 The Android Open Source Project
 
 package {
-    default_applicable_licenses: ["external_libthermal_license"],
+    default_applicable_licenses: ["external_libpm_libthermal_license"],
 }
 
 // Added automatically by a large-scale-change that took the approach of
@@ -19,7 +19,7 @@ package {
 // used in the current project.
 // See: http://go/android-license-faq
 license {
-    name: "external_libthermal_license",
+    name: "external_libpm_libthermal_license",
     visibility: [":__subpackages__"],
     license_kinds: [
         "SPDX-license-identifier-LGPL",
@@ -32,7 +32,7 @@ license {
 }
 
 cc_library_headers {
-    name: "libthermal_headers",
+    name: "libpm_libthermal_headers",
     export_include_dirs: ["include"],
 }
 
@@ -50,7 +50,7 @@ cc_library_shared {
         },
     },
 
-    name: "libthermal",
+    name: "libpm_libthermal",
     srcs: [
         "src/thermal.c",
         "src/events.c",

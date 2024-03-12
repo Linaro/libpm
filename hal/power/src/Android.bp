@@ -40,7 +40,8 @@ cc_binary {
 	"libjsoncpp",
         "libutils",
 	"libbinder_ndk",
-	"libpowperf",
+	"libpm_libpower",
+	"libpm_libperformance",
 	"android.hardware.power-V3-ndk",
     ],
 

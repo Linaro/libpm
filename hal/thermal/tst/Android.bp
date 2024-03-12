@@ -33,7 +33,7 @@ cc_binary {
 
     // FIXME, remove json deps (need code reorg)
     shared_libs: [
-	"libthermal",
+	"libpm_libthermal",
         "libbase",
         "libhidlbase",
         "libutils",

@@ -34,7 +34,7 @@ cc_binary {
 	"libbase",
 	"libutils",
 	"libbinder_ndk",
-	"libpowperf",
+	"libpower",
 	"android.hardware.power-V3-ndk",
      ],
 
