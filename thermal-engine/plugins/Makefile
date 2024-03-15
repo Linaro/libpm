@@ -11,7 +11,6 @@ LDFLAGS = -shared
 all: $(PLUGINS)
 
 %.so: %.c
-# $(CROSS_COMPILE)$(CC) $(CFLAGS) $(INCLUDES) $< -o $@ $(OBJS) $(LDFLAGS)
 	$(CROSS_COMPILE)$(CC) $(CFLAGS) $(INCLUDES) $< -o $@ $(LDFLAGS)
 
 clean:

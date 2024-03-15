@@ -48,6 +48,10 @@ cc_binary {
         "android.hardware.thermal@1.0",
     ],
 
+    header_libs: [
+	"libpm_libthermal_headers",
+    ],
+
     cflags: ["-fexceptions"],
 
     strip: {

@@ -83,11 +83,6 @@ static int plugin_descriptor_load(struct plugin *plugin, void *handle)
 		return -1;
 	}
 	
-	if (!plugin->descriptor->compatibles) {
-		ERROR("Missing 'compatible' in plugin descriptor\n");
-		return -1;
-	}
-
 	if (!plugin->descriptor->profile)
 		NOTICE("No plugin profile specified\n");
 

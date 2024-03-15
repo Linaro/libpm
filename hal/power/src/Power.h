@@ -21,6 +21,8 @@
 
 #include "Timer.h"
 
+struct performance_handler;
+
 namespace aidl::android::hardware::power::impl::linaro {
 
 class Power : public BnPower {
@@ -36,6 +38,8 @@ public:
 					     std::shared_ptr<IPowerHintSession>* _aidl_return) override;
 	ndk::ScopedAStatus getHintSessionPreferredRate(int64_t* outNanoseconds) override;
 	Power(Looper *looper);
+
+	struct performance_handler *getPerfHandler(Power *power);
 
 private:
 	class BoostAction {
@@ -98,6 +102,8 @@ private:
 
 	Mode mCurrentMode;
 	Boost mCurrentBoost;
+
+	struct performance_handler *perf_handler;
 };
 
 } // namespace aidl::android::hardware::power::impl::linaro

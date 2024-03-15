@@ -22,7 +22,8 @@
 #include "Power.h"
 #include "PowerHintSession.h"
 
-#include "libpowperf.h"
+#include "power.h"
+#include "performance.h"
 
 namespace aidl::android::hardware::power::impl::linaro {
 
@@ -324,7 +325,7 @@ bool Power::setMode_Launch(bool enabled)
 	LOG(DEBUG) << "Power::" << __func__ << "("
 		   << enabled << ")";
 
-	if (powperf_set_global_latency(enabled ? 0 : INT_MAX)) {
+	if (performance_set_global_latency(enabled ? 0 : INT_MAX)) {
 		LOG(ERROR) << "Failed to set global latency";
 		return false;
 	}
@@ -495,12 +496,13 @@ ScopedAStatus Power::getHintSessionPreferredRate(int64_t* outNanoseconds)
 
 static std::map<std::string, int> PerfCapableDevices;
 
-static int ForEachPerfDevice(const char *device, void *data)
+static int ForEachPerfDevice(struct performance_handler *perf_handler,
+			     const char *device, void *data)
 {
 	Power *power = (Power *)data;
 	int id;
 
-	id = powperf_get_device_id(device);
+	id = performance_get_device_id(perf_handler, device);
 	if (id < 0) {
 		LOG(ERROR) << "Failed to get device id";
 		return -1;
@@ -513,14 +515,21 @@ static int ForEachPerfDevice(const char *device, void *data)
 	return 0;
 }
 
+struct performance_handler *Power::getPerfHandler(Power *power)
+{
+	return power->perf_handler;
+}
+
 Power::Power(Looper *looper)
 {
-	if (powperf_init()) {
+	this->perf_handler = performance_create();
+	if (!this->perf_handler) {
 		LOG(ERROR) << "Failed to initialize power/performance library";
 		throw("Failed to initialize power/performance library");
 	}
 
-	if (powperf_for_each_device(ForEachPerfDevice, this)) {
+	if (performance_for_each_device(this->perf_handler,
+					ForEachPerfDevice, this)) {
 		LOG(ERROR) << "Failed to enumerate performance device";
 		throw("Failed to enumerate performance device");
 	}

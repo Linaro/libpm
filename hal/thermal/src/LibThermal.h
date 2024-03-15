@@ -15,7 +15,7 @@
  */
 #include <string>
 
-#include "thermal.h"
+#include <thermal.h>
 
 namespace android {
 namespace hardware {

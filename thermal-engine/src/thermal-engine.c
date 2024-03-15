@@ -45,11 +45,14 @@ static void banner(void)
 	free(line);
 }
 
-static void thermal_engine_exit(int rc, void *arg)
-{
-	struct thermal_engine_data *ted = (typeof(ted))arg;
+struct thermal_engine_data *ted;
 
-	INFO("Thermal engine exiting with error code=%d\n", rc);
+static void thermal_engine_exit(void)
+{
+	if (!ted)
+		return;
+
+	INFO("Thermal engine exiting.\n");
 
 	thermal_engine_options_exit(ted);
 	thermal_engine_config_exit(ted);
@@ -121,8 +124,6 @@ enum {
 
 int main(int argc, char *argv[])
 {
-	struct thermal_engine_data *ted;
-
 	ted = malloc(sizeof(*ted));
 	if (!ted)
 		return THERMAL_ENGINE_MEMORY_ERROR;
@@ -194,7 +195,7 @@ int main(int argc, char *argv[])
 
 	INFO("Thermal engine successfuly initialized\n");
 
-	if (on_exit(thermal_engine_exit, ted)) {
+	if (atexit(thermal_engine_exit)) {
 		ERROR("Failed to set on_exit callback\n");
 		return THERMAL_ENGINE_SYSTEM_ERROR;
 	}

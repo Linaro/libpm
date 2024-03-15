@@ -1,6 +1,6 @@
 /* SPDX-License-Identifier: LGPL-2.1+ */
-/* Copyright (C) 2022, Linaro Ltd - Daniel Lezcano <daniel.lezcano@linaro.org> */
-#ifndef __THERMAL_EINGINE_MAINLOOP_H
+/* Copyright (C) 2024, Linaro Ltd - Daniel Lezcano <daniel.lezcano@linaro.org> */
+#ifndef __THERMAL_ENGINE_MAINLOOP_H
 #define __THERMAL_ENGINE_MAINLOOP_H
 
 typedef int (*mainloop_callback_t)(int fd, void *data);
