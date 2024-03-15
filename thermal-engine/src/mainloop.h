@@ -1,4 +1,3 @@
-/* SPDX-License-Identifier: LGPL-2.1+ */
 /* Copyright (C) 2024, Linaro Ltd - Daniel Lezcano <daniel.lezcano@linaro.org> */
 #ifndef __THERMAL_ENGINE_MAINLOOP_H
 #define __THERMAL_ENGINE_MAINLOOP_H
