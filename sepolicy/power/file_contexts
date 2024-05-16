@@ -1,2 +1,0 @@
-/dev/cpu_dma_latency                   u:object_r:latency_device:s0
-/vendor/bin/hw/android\.hardware\.power@1\.3-service\.linaro-generic                   u:object_r:hal_power_linaro_exec:s0

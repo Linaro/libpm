@@ -1,8 +1,0 @@
-service hal_power /vendor/bin/hw/android.hardware.power@1.3-service.linaro-generic
-    interface android.hardware.power@1.0::IPower generic
-    interface android.hardware.power@1.1::IPower generic
-    interface android.hardware.power@1.2::IPower generic
-    interface android.hardware.power@1.3::IPower generic
-    class hal
-    user system
-    group system
