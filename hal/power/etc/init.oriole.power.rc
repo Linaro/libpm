@@ -1,0 +1,116 @@
+on init
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_cur_freq
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_setspeed
+    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_available_frequencies
+
+    chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_cur_freq
+    chown system system /sys/devices/system/cpu/cpufreq/policy4/scaling_setspeed
+    chown system system /sys/devices/system/cpu/cpufreq/policy6/scaling_available_frequencies
+
+    chown system system /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq
+    chown system system /sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq
+    chown system system /sys/devices/system/cpu/cpufreq/policy6/scaling_cur_freq
+    chown system system /sys/devices/system/cpu/cpufreq/policy6/scaling_setspeed
+    chown system system /sys/devices/system/cpu/cpufreq/policy6/scaling_available_frequencies
+
+    chown system system /sys/class/devfreq/17000010.devfreq_mif/min_freq
+    chown system system /sys/class/devfreq/17000010.devfreq_mif/max_freq
+    chown system system /sys/class/devfreq/17000010.devfreq_mif/cur_freq
+    chown system system /sys/class/devfreq/17000010.devfreq_mif/target_freq
+    chown system system /sys/class/devfreq/17000010.devfreq_mif/available_frequencies
+
+    chown system system /sys/class/devfreq/17000020.devfreq_int/min_freq
+    chown system system /sys/class/devfreq/17000020.devfreq_int/max_freq
+    chown system system /sys/class/devfreq/17000020.devfreq_int/cur_freq
+    chown system system /sys/class/devfreq/17000020.devfreq_int/target_freq
+    chown system system /sys/class/devfreq/17000020.devfreq_int/available_frequencies
+
+    chown system system /sys/class/devfreq/17000030.devfreq_intcam/min_freq
+    chown system system /sys/class/devfreq/17000030.devfreq_intcam/max_freq
+    chown system system /sys/class/devfreq/17000030.devfreq_intcam/cur_freq
+    chown system system /sys/class/devfreq/17000030.devfreq_intcam/target_freq
+    chown system system /sys/class/devfreq/17000030.devfreq_intcam/available_frequencies
+
+    chown system system /sys/class/devfreq/17000040.devfreq_disp/min_freq
+    chown system system /sys/class/devfreq/17000040.devfreq_disp/max_freq
+    chown system system /sys/class/devfreq/17000040.devfreq_disp/cur_freq
+    chown system system /sys/class/devfreq/17000040.devfreq_disp/target_freq
+    chown system system /sys/class/devfreq/17000040.devfreq_disp/available_frequencies
+
+    chown system system /sys/class/devfreq/17000050.devfreq_cam/min_freq
+    chown system system /sys/class/devfreq/17000050.devfreq_cam/max_freq
+    chown system system /sys/class/devfreq/17000050.devfreq_cam/cur_freq
+    chown system system /sys/class/devfreq/17000050.devfreq_cam/target_freq
+    chown system system /sys/class/devfreq/17000050.devfreq_cam/available_frequencies
+
+    chown system system /sys/class/devfreq/17000060.devfreq_tnr/min_freq
+    chown system system /sys/class/devfreq/17000060.devfreq_tnr/max_freq
+    chown system system /sys/class/devfreq/17000060.devfreq_tnr/cur_freq
+    chown system system /sys/class/devfreq/17000060.devfreq_tnr/target_freq
+    chown system system /sys/class/devfreq/17000060.devfreq_tnr/available_frequencies
+
+    chown system system /sys/class/devfreq/17000070.devfreq_mfc/min_freq
+    chown system system /sys/class/devfreq/17000070.devfreq_mfc/max_freq
+    chown system system /sys/class/devfreq/17000070.devfreq_mfc/cur_freq
+    chown system system /sys/class/devfreq/17000070.devfreq_mfc/target_freq
+    chown system system /sys/class/devfreq/17000070.devfreq_mfc/available_frequencies
+
+    chown system system /sys/class/devfreq/17000080.devfreq_bo/min_freq
+    chown system system /sys/class/devfreq/17000080.devfreq_bo/max_freq
+    chown system system /sys/class/devfreq/17000080.devfreq_bo/cur_freq
+    chown system system /sys/class/devfreq/17000080.devfreq_bo/target_freq
+    chown system system /sys/class/devfreq/17000080.devfreq_bo/available_frequencies
+
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu0_memlat@17000010/min_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu0_memlat@17000010/max_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu0_memlat@17000010/cur_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu0_memlat@17000010/target_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu0_memlat@17000010/available_frequencies
+
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu1_memlat@17000010/min_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu1_memlat@17000010/max_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu1_memlat@17000010/cur_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu1_memlat@17000010/target_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu1_memlat@17000010/available_frequencies
+
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu2_memlat@17000010/min_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu2_memlat@17000010/max_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu2_memlat@17000010/cur_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu2_memlat@17000010/target_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu2_memlat@17000010/available_frequencies
+
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu3_memlat@17000010/min_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu3_memlat@17000010/max_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu3_memlat@17000010/cur_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu3_memlat@17000010/target_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu3_memlat@17000010/available_frequencies
+
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu4_memlat@17000010/min_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu4_memlat@17000010/max_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu4_memlat@17000010/cur_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu4_memlat@17000010/target_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu4_memlat@17000010/available_frequencies
+
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu5_memlat@17000010/min_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu5_memlat@17000010/max_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu5_memlat@17000010/cur_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu5_memlat@17000010/target_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu5_memlat@17000010/available_frequencies
+
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu6_memlat@17000010/min_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu6_memlat@17000010/max_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu6_memlat@17000010/cur_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu6_memlat@17000010/target_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu6_memlat@17000010/available_frequencies
+
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu7_memlat@17000010/min_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu7_memlat@17000010/max_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu7_memlat@17000010/cur_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu7_memlat@17000010/target_freq
+    chown system system /sys/class/devfreq/gs_memlat_devfreq:devfreq_mif_cpu7_memlat@17000010/available_frequencies
+
+    chown system system /dev/cpu_dma_latency

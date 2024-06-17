@@ -36,7 +36,7 @@ cc_binary {
 	"libpm_libthermal",
 	"libpm_libperformance",
 	"libpm_libpower",
-	"libconfig",
+	"libconfig_shared",
     ],
 
     static_libs: [
@@ -65,7 +65,7 @@ cc_library_static {
 	"libpm_libthermal",
 	"libpm_libperformance",
 	"libpm_libpower",
-	"libconfig",
+	"libconfig_shared",
     ],
 
     header_libs: [

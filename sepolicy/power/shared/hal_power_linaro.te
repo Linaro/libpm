@@ -4,7 +4,7 @@ hal_server_domain(hal_power_linaro, hal_power)
 type hal_power_linaro_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_power_linaro)
 
-# Access sysfs files
+# Access sysfs files for libperformance
 allow hal_power_linaro sysfs_devices_system_cpu:file rw_file_perms;
 allow hal_power_linaro sysfs:file rw_file_perms;
 allow hal_power_linaro sysfs:dir r_dir_perms;
