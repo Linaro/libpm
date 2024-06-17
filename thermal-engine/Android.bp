@@ -1,5 +1,10 @@
 // Copyright 2021 The Android Open Source Project
 
+/* The thermal engine does not compile on AOSP if the libconfig
+   Android's Android.bp is not configured to be compiled and deployed on
+   AOSP. Until the patch is not merged in the main AOSP tree, we have to
+   comment this Android.bp
+
 package {
     default_applicable_licenses: ["external_libpm_thermal_engine_license"],
 }
@@ -105,3 +110,5 @@ cc_library_shared {
 	"-fPIC",
     ],
 }
+
+*/
