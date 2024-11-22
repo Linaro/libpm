@@ -118,7 +118,7 @@ static int trip_high(int tz_id, int trip_id, int temp, void *arg)
 		return 0;
 	}
 
-	return threshold_crossed_up(ted->thresholds, tz_id, trip->temp);
+	return trip_crossed_up(ted->thresholds, tz_id, trip->temp);
 }
 
 static int trip_low(int tz_id, int trip_id, int temp, void *arg)
@@ -135,7 +135,7 @@ static int trip_low(int tz_id, int trip_id, int temp, void *arg)
 		return 0;
 	}
 
-	return threshold_crossed_down(ted->thresholds, tz_id, trip->temp);
+	return trip_crossed_down(ted->thresholds, tz_id, trip->temp);
 }
 
 static int trip_add(int tz_id, int trip_id, int type, int temp, int hyst,

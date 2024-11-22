@@ -81,7 +81,7 @@ static int threshold_crossed(struct thresholds *thresholds, int tz_id, int tempe
 	return threshold_for_each_plugin(threshold, cb);
 }
 
-static int __threshold_crossed_up(struct plugin *plugin, struct threshold *threshold)
+static int __trip_crossed_up(struct plugin *plugin, struct threshold *threshold)
 {
 	DEBUG("Doing plugin action %s with profile=%s\n",
 	      plugin->descriptor->compatibles[0], plugin->descriptor->profile);
@@ -92,7 +92,7 @@ static int __threshold_crossed_up(struct plugin *plugin, struct threshold *thres
 	return 0;
 }
 
-static int __threshold_crossed_down(struct plugin *plugin, struct threshold *threshold)
+static int __trip_crossed_down(struct plugin *plugin, struct threshold *threshold)
 {
 	DEBUG("Doing plugin action %s with profile=%s\n",
 	      plugin->descriptor->compatibles[0], plugin->descriptor->profile);
@@ -103,24 +103,24 @@ static int __threshold_crossed_down(struct plugin *plugin, struct threshold *thr
 	return 0;
 }
 
-int threshold_crossed_up(struct thresholds *thresholds, int tz_id, int temperature)
+int trip_crossed_up(struct thresholds *thresholds, int tz_id, int temperature)
 {
 	DEBUG("Detected threshold crossed the way up event, "
 	     "tz_id=%d, temperature=%d\n", tz_id, temperature);
 
 	thresholds->crossed++;
 
-	return threshold_crossed(thresholds, tz_id, temperature, __threshold_crossed_up);
+	return threshold_crossed(thresholds, tz_id, temperature, __trip_crossed_up);
 }
 
-int threshold_crossed_down(struct thresholds *thresholds, int tz_id, int temperature)
+int trip_crossed_down(struct thresholds *thresholds, int tz_id, int temperature)
 {
 	DEBUG("Detected threshold crossed the way down event, "
 	      "tz_id=%d, temperature=%d\n", tz_id, temperature);
 
 	thresholds->crossed--;
 	
-	return threshold_crossed(thresholds, tz_id, temperature, __threshold_crossed_down);
+	return threshold_crossed(thresholds, tz_id, temperature, __trip_crossed_down);
 }
 
 static int __threshold_add_action(struct plugin *plugin, void *data)
