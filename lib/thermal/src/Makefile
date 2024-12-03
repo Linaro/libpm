@@ -1,6 +1,6 @@
 # SPDX-License-Identifier: LGPL-2.1+
 CC=gcc
-INCLUDES=-I../include -I/usr/include/libnl3
+INCLUDES=-I/usr/include/libnl3 -I../include
 CFLAGS+=-g -Wall -Wno-unused -fPIC -Wextra -O2 $(INCLUDES)
 LDFLAGS=-shared -lnl-3 -lnl-genl-3
 DEPS=include/libthermal.h
