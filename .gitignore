@@ -1,6 +1,7 @@
 *.o
 *.so
 *~
+*.orig
 
 lib/performance/tst/tst_performance
 lib/power/tst/tst_power
@@ -10,3 +11,6 @@ thermal-engine/tst/tst_cb_chain
 thermal-engine/tst/tst_fsm
 thermal-engine/tst/tst_pair
 thermal-engine/tst/tst_plugin
+
+/lib/thermal/include/
+!/lib/thermal/include/thermal.h
