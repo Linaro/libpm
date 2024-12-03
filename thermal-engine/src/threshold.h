@@ -9,7 +9,7 @@ struct list;
 
 int trip_crossed_up(struct thresholds *thresholds, int tz_id, int temperature);
 int trip_crossed_down(struct thresholds *thresholds, int tz_id, int temperature);
-int threshold_add(struct thresholds *thresholds, int tz_id, int temperature);
+int threshold_add(struct thresholds *thresholds, int tz_id, int temperature, int hysteresis);
 int threshold_add_action(struct thresholds *thresholds, struct list *plugins,
 			 struct plugin_power *pwr, const char *profile,
 			 int tz_id, int temperature);

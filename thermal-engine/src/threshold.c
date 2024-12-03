@@ -166,7 +166,7 @@ int threshold_add_action(struct thresholds *thresholds, struct list *plugins,
 				       __threshold_add_action, threshold);
 }
 
-int threshold_add(struct thresholds *thresholds, int tz_id, int temperature)
+int threshold_add(struct thresholds *thresholds, int tz_id, int temperature, int hysteresis)
 {
 	int id = threshold_id_encode(tz_id, temperature);
 	struct threshold *threshold;

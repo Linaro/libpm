@@ -137,7 +137,7 @@ static int config_threshold(struct thermal_engine_data *ted, int tz_id,
 	DEBUG("Found threshold with temperature=%d, hysteresis=%d\n",
 	      temperature, hysteresis);
 
-	if (threshold_add(ted->thresholds, tz_id, temperature)) {
+	if (threshold_add(ted->thresholds, tz_id, temperature, hysteresis)) {
 		ERROR("Failed to add threshold temp=%d, hyst=%d\n",
 		      temperature, hysteresis);
 		return -1;
@@ -170,7 +170,7 @@ static int config_thresholds(struct thermal_engine_data *ted, int tz_id,
 	config_setting_t *threshold;
 	int i;
 
-	if (threshold_add(ted->thresholds, tz_id, THRESHOLD_DEFAULT_TEMP)) {
+	if (threshold_add(ted->thresholds, tz_id, THRESHOLD_DEFAULT_TEMP, 0)) {
 		ERROR("Failed to add initial state to fsm\n");
 		return -1;
 	}

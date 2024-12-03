@@ -203,20 +203,62 @@ static int gov_change(int tz_id, const char *name, __maybe_unused void *arg)
 	return 0;
 }
 
+static int threshold_added(int tz_id, int temp, int direction, __maybe_unused void *arg)
+{
+	DEBUG("Threshold added tz_id=%d: temp=%d, direction=%d\n", tz_id, temp, direction);
+
+	return 0;
+}
+
+static int threshold_deleted(int tz_id, int temp, int direction, __maybe_unused void *arg)
+{
+	DEBUG("Threshold deleted tz_id=%d: temp=%d, direction=%d\n", tz_id, temp, direction);
+
+	return 0;
+}
+
+static int threshold_flushed(int tz_id, __maybe_unused void *arg)
+{
+	DEBUG("Thresholds flushed tz_id=%d\n", tz_id);
+
+	return 0;
+}
+
+static int threshold_up(int tz_id, int temp, int prev_temp, __maybe_unused void *arg)
+{
+	INFO("Threshold crossed way up tz_id=%d: temp=%d, prev_temp=%d\n",
+	     tz_id, temp, prev_temp);
+
+	return 0;
+}
+
+static int threshold_down(int tz_id, int temp, int prev_temp, __maybe_unused void *arg)
+{
+	INFO("Threshold crossed way down tz_id=%d: temp=%d, prev_temp=%d\n",
+	     tz_id, temp, prev_temp);
+
+	return 0;
+}
+
 static struct thermal_ops ops = {
-	.events.tz_create	= tz_create,
-	.events.tz_delete	= tz_delete,
-	.events.tz_disable	= tz_disable,
-	.events.tz_enable	= tz_enable,
-	.events.trip_high	= trip_high,
-	.events.trip_low	= trip_low,
-	.events.trip_add	= trip_add,
-	.events.trip_delete	= trip_delete,
-	.events.trip_change	= trip_change,
-	.events.cdev_add	= cdev_add,
-	.events.cdev_delete	= cdev_delete,
-	.events.cdev_update	= cdev_update,
-	.events.gov_change	= gov_change
+	.events.tz_create		= tz_create,
+	.events.tz_delete		= tz_delete,
+	.events.tz_disable		= tz_disable,
+	.events.tz_enable		= tz_enable,
+	.events.trip_high		= trip_high,
+	.events.trip_low		= trip_low,
+	.events.trip_add		= trip_add,
+	.events.trip_delete		= trip_delete,
+	.events.trip_change		= trip_change,
+	.events.cdev_add		= cdev_add,
+	.events.cdev_delete		= cdev_delete,
+	.events.cdev_update		= cdev_update,
+	.events.gov_change		= gov_change,
+	.events.threshold_added		= threshold_added,
+	.events.threshold_deleted	= threshold_deleted,
+	.events.threshold_flushed	= threshold_flushed,
+	.events.threshold_up		= threshold_up,
+	.events.threshold_down		= threshold_down,
 };
 
 static int thermal_event(__maybe_unused int fd, __maybe_unused void *arg)
